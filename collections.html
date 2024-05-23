@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Warner Bros</title>
+   <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
+   <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+   <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css' rel='stylesheet'>
+   <link rel="stylesheet" href="style.css"/>
+   <style>
+   
+     .container-fluid {
+       display: flex;
+       justify-contant: space-between;
+       align-items: center;
+     }
+     .content {
+       display: flex;
+       justify-content: space-between;
+     }
+     .scroll-container {
+       background-color: #333;
+       overflow: auto;
+       white-space: nowrap;
+       padding: 10px;
+       width: 60%;
+     }
+     .scroll-container img {
+       padding: 10px;
+     }
+     .video-container {
+       width: 40%;
+	   height: 60%
+       padding: 10px;
+	   
+     }
+     .video-container video {
+       width: 100%;
+       height: auto;
+     }
+	         .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
+        }
+        .container {
+            padding: 0 16px;
+        }
+        .container::after, .row::after {
+            contant: "";
+            clear: both;
+            display: table;
+        }
+        .title {
+            color: grey;
+        }
+        h1 {
+            font-size: 50px;
+            word-break: break-all;
+        }
+        .row {
+            margin: 8px -16px;
+        }
+        .row,
+        .row > .column {
+            padding: 8px;
+        }
+        .column {
+            float: left;
+            width: 33.33%;
+            display: none;
+        }
+        .row:after {
+            contant: "";
+            display: table;
+            clear: both;
+        }
+        .contant {
+            background-color: white;
+            padding: 10px;
+        }
+        .contant img {
+            width: 200px;
+			height: 40vh;
+            object-fit: center;
+            font-size: 20px;
+    
+        }
+        .show {
+            display: block;
+        }
+        .btn {
+            border: none;
+            outline: none;
+            padding: 12px 16px;
+            color: white;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: lightblue;
+        }
+        .btn.active {
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+        }
+   </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.png" alt="" width="50" height="30" class="d-inline-block align-text-top">
+          Warner Bros
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="movies.html">Movies</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tvshows.html">TvShows</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="games&apps.html">Games&Apps</a> 
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="collections.html">Collections</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="feedback.html">Feedback</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <div class="section">
+    <h2 style="color: white; font-size: 30px;">Warner Bros Gallery</h2>
+    <div class="content">
+      <div class="scroll-container">
+        <img src="images/flash.jpg" alt="Flash" width="600" height="400">
+        <img src="images/madmax.jpg" alt="Mad Max" width="600" height="400">
+        <img src="images/dune.jpg" alt="Dune" width="600" height="400">
+        <img src="images/godzilla.jpg" alt="Godzilla" width="600" height="400">
+      </div>
+      <div class="video-container">
+        <video controls>
+          <source src="images/video.mp4" type="video/mp4">
+        </video>
+		<p style="color: white; font-size: 40px; font-weight: 800; text-align:center;">Our Entry Our Pride</p>
+		<p style="color: white; font-size: 20px; font-weight: 800; text-align:center;">Celebrating Every  Story</p>
+      </div>
+    </div>
+  </div>
+  <div class="article">
+  <p style="font-size:50px; font-weight:800; color: white; text-align:center;">Best Collection Made For You</p>
+<div id="myBtnContainer" style="text-align:center;">
+  <button class="btn" onclick="filterSelection('Family favorites')">Family favorites</button>
+  <button class="btn" onclick="filterSelection('DC')">DC</button>
+  <button class="btn" onclick="filterSelection('classics')">Classics</button>
+  <button class="btn" onclick="filterSelection('Black voices')">Black Voices</button>
+  <button class="btn" onclick="filterSelection('Hottest Picks')">Hottest Picks</button>
+  <button class="btn" onclick="filterSelection('Actios&Adventure Picks')">Actios&Adventure Picks</button>
+</div>
+
+<div class="row">
+  <div class="column Family favorites">
+    <div class="contant">
+      <img src="Images/mom.jpeg" alt="mom" style="width:100%" "height:200px" "object-fit:center">
+      <h4>Mom</h4>
+      <p>Comedy&Adventure</p>
+    </div>
+  </div>
+  <div class="column Family favorites">
+    <div class="contant">
+      <img src="Images/tnj.jpeg" alt="Lights" style="width:100%">
+      <h4>Tom & Jerry</h4>
+      <p>Animation,Comedy</p>
+    </div>
+  </div>
+  <div class="column Family favorites">
+    <div class="contant">
+      <img src="Images/two.jpeg" alt="Two&Half Men" style="width:100%">
+      <h4>Two& Half Men</h4>
+      <p>Comedy&Adventure</p>
+    </div>
+  </div>
+
+  <div class="column Family favorites">
+    <div class="contant">
+      <img src="Images/friends.jpg" alt="friends" style="width:100%">
+      <h4>F.r.i.e.n.d.s</h4>
+      <p>Comedy&Adventure</p>
+    </div>
+  </div>
+  <div class="column Family favorites">
+    <div class="contant">
+      <img src="Images/sein.jpeg" alt="Seinfled" style="width:100%">
+      <h4>Seinfled</h4>
+      <p>Comedy&Adventure</p>
+    </div>
+  </div>
+  <div class="column Family favorites">
+    <div class="contant">
+      <img src="Images/young.jpeg" alt="Young Sheldon" style="width:100%">
+      <h4>Young Sheldon</h4>
+      <p>Comedy&Adventure</p>
+    </div>
+  </div>
+
+  <div class="column DC">
+    <div class="contant">
+      <img src="Images/batwoman.jpeg" alt="batwoman" style="width:100%">
+      <h4>Batwoman</h4>
+      <p>Sci-fi,Action</p>
+    </div>
+  </div>
+  <div class="column DC">
+    <div class="contant">
+      <img src="Images/supergal.jpeg" alt="supergal" style="width:100%">
+      <h4>Supergal</h4>
+      <p>Sci-fi,Action</p>
+    </div>
+  </div>
+  <div class="column DC">
+    <div class="contant">
+      <img src="Images/superpets.jpg" alt="league" style="width:100%">
+      <h4>Superpets</h4>
+      <p>Sci-fi,Action,Adventure&Animation</p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div> 
+ <div class="row">
+  <div class="column DC">
+    <div class="contant">
+      <img src="Images/m3.jpg" alt="batman" style="width:100%">
+      <h4>Batman v Superman</h4>
+      <p>Sci-fi,Action</p>
+    </div>
+  </div>
+  <div class="column DC">
+    <div class="contant">
+      <img src="Images/nin.jpg" alt="Ninja" style="width:100%">
+      <h4>Ninja GO</h4>
+      <p>Animation,Action</p>
+    </div>
+  </div>
+  <div class="column DC">
+    <div class="contant">
+      <img src="Images/league.jpeg" alt="Lego Movie" style="width:100%">
+      <h4>Justice League</h4>
+      <p>Animation,Action</p>
+    </div>
+  </div>
+
+  <div class="column classics">
+    <div class="contant">
+      <img src="Images/swamp.jpeg" alt="swamp" style="width:100%">
+      <h4>Swamp Thing</h4>
+      <p>Action,Horror,Adventure</p>
+    </div>
+  </div>
+  <div class="column classics">
+    <div class="contant">
+      <img src="Images/penny.jpeg" alt="penny" style="width:100%">
+      <h4>Penny Dreadful</h4>
+      <p>Action,Adventure</p>
+    </div>
+  </div>
+  <div class="column classics">
+    <div class="contant">
+      <img src="Images/castle.jpeg" alt="classics" style="width:100%">
+      <h4>Castle Rock</h4>
+      <p>Action,Horror,Adventure</p>
+    </div>
+  </div>
+
+  <div class="column classics">
+    <div class="contant">
+      <img src="Images/originals.jpeg" alt="originals" style="width:100%">
+      <h4>The originals</h4>
+      <p>Action,Horror,Adeventure</p>
+    </div>
+  </div>
+  <div class="column classics">
+    <div class="contant">
+      <img src="Images/salem.jpeg" alt="outsiders" style="width:100%">
+      <h4>Outsiders</h4>
+      <p>Action&Adeventure</p>
+    </div>
+  </div>
+  <div class="column classics">
+    <div class="contant">
+      <img src="Images/lovecraft.jpeg" alt="interest" style="width:100%">
+      <h4>Person Of Interest</h4>
+      <p>Action,Adventure</p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+             <div class="row">
+  <div class="column Black voices">
+    <div class="contant">
+      <img src="Images/mom.jpeg" alt="mom" style="width:100%">
+      <h4  style="color: #241e63; text-align: center;">Mom</h4>
+      <p>Comedy&Adventure</p>
+    </div>
+  </div>
+  <div class="column Black voices">
+    <div class="contant">
+      <img src="Images/tnj.jpeg" alt="Lights" style="width:100%">
+      <h4>Tom & Jerry</h4>
+      <p>Animation,Comedy</p>
+    </div>
+  </div>
+  <div class="column Black voices">
+    <div class="contant">
+      <img src="Images/two.jpeg" alt="Two&Half Men" style="width:100%">
+      <h4>Two& Half Men</h4>
+      <p>Comedy&Adventure</p>
+    </div>
+  </div>
+
+  <div class="column Black voices">
+    <div class="contant">
+      <img src="Images/friends.jpg" alt="friends" style="width:100%">
+      <h4>F.r.i.e.n.d.s</h4>
+      <p>Comedy&Adventure</p>
+    </div>
+  </div>
+  <div class="column Black voices">
+    <div class="contant">
+      <img src="Images/sein.jpeg" alt="Seinfled" style="width:100%">
+      <h4>Seinfled</h4>
+      <p>Comedy&Adventure</p>
+    </div>
+  </div>
+  <div class="column Black voices">
+    <div class="contant">
+      <img src="Images/young.jpeg" alt="Young Sheldon" style="width:100%">
+      <h4>Young Sheldon</h4>
+      <p>Comedy&Adventure</p>
+    </div>
+  </div>
+
+  <div class="column Hottest Picks">
+    <div class="contant">
+      <img src="images/batwoman.jpeg" alt="batwoman" style="width:100%">
+      <h4>Batwoman</h4>
+      <p>Sci-fi,Action</p>
+    </div>
+  </div>
+  <div class="column Hottest Picks">
+    <div class="contant">
+      <img src="Images/supergal.jpeg" alt="supergal" style="width:100%">
+      <h4>Supergal</h4>
+      <p>Sci-fi,Action</p>
+    </div>
+  </div>
+  <div class="column Hottest Picks">
+    <div class="contant">
+      <img src="Images/superpets.jpg" alt="league" style="width:100%">
+      <h4>Superpets</h4>
+      <p>Sci-fi,Action,Adventure&Animation</p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div> 
+ <div class="row">
+  <div class="column Hottest Picks">
+    <div class="contant">
+      <img src="Images/m3.jpg" alt="batman" style="width:100%">
+      <h4>Batman v Superman</h4>
+      <p>Sci-fi,Action</p>
+    </div>
+  </div>
+  <div class="column Hottest Picks">
+    <div class="contant">
+      <img src="Images/nin.jpg" alt="Ninja" style="width:100%">
+      <h4>Ninja GO</h4>
+      <p>Animation,Action</p>
+    </div>
+  </div>
+  <div class="column Hottest Picks">
+    <div class="contant">
+      <img src="Images/league.jpeg" alt="Lego Movie" style="width:100%">
+      <h4>Justice League</h4>
+      <p>Animation,Action</p>
+    </div>
+  </div>
+
+  <div class="column Actios&Adventure Picks">
+    <div class="contant">
+      <img src="Images/swamp.jpeg" alt="swamp" style="width:100%">
+      <h4>Swamp Thing</h4>
+      <p>Action,Horror,Adventure</p>
+    </div>
+  </div>
+  <div class="column Actios&Adventure Picks">
+    <div class="contant">
+      <img src="Images/penny.jpeg" alt="penny" style="width:100%">
+      <h4>Penny Dreadful</h4>
+      <p>Action,Adventure</p>
+    </div>
+  </div>
+  <div class="column Actios&Adventure Picks">
+    <div class="contant">
+      <img src="Images/castle.jpeg" alt="classics" style="width:100%">
+      <h4>Castle Rock</h4>
+      <p>Action,Horror,Adventure</p>
+    </div>
+  </div>
+
+  <div class="column  Actios&Adventure Picks">
+    <div class="contant">
+      <img src="Images/originals.jpeg" alt="originals" style="width:100%">
+      <h4>The originals</h4>
+      <p>Action,Horror,Adeventure</p>
+    </div>
+  </div>
+  <div class="column Actios&Adventure Picks">
+    <div class="contant">
+      <img src="Images/salem.jpeg" alt="outsiders" style="width:100%">
+      <h4>Outsiders</h4>
+      <p>Action&Adeventure</p>
+    </div>
+  </div>
+  <div class="column  Actios&Adventure Picks">
+    <div class="contant">
+      <img src="Images/lovecraft.jpeg" alt="interest" style="width:100%">
+      <h4>Person Of Interest</h4>
+      <p>Action,Adventure</p>
+    </div>
+  </div>
+  </div>
+  
+  <footer class="footer text-center text-lg-start">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <img src="images/logo.png" alt="Logo" class="logo">
+        </div>
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Follow us</h5>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Contact</h5>
+          <p>
+            1234 Street Name, City, State 56789<br>
+            Email: info@example.com<br>
+            Phone: +1 234 567 890
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2024 Warner Brothers
+    </div>
+  </footer>
+  <script>
+filterSelection("Family favorites") // Execute the function and show all columns
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+</body>
+</html>
